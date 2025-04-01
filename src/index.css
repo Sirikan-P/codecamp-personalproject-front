@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slider img{
+    height: 400px;
+    object-fit:cover;
+}
