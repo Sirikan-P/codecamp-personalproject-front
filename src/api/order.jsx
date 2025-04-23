@@ -50,3 +50,12 @@ export const actionSetOrderStatus = async (value,token,orderId)=>{
       }
   })
 }
+
+export const actionGetSalesProduct = async (token)=>{  
+
+  return await axios.get(`http://localhost:8001/api/order/seller`, {
+      headers: { 
+          Authorization:`Bearer ${token}`
+      }
+  })
+}

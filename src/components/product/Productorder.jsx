@@ -2,7 +2,7 @@ import React from 'react'
 
 function Productorder(props) {
   const {singleProduct} = props
-  const imageArray = singleProduct.product.ProductImage ? singleProduct.product.ProductImage : []
+  const imageArray = singleProduct?.product?.ProductImage ? singleProduct?.product?.ProductImage : []
 
   return (
     <div> 
@@ -14,11 +14,11 @@ function Productorder(props) {
           <div className="col-span-12 lg:col-span-10 detail w-full lg:pl-3">
             <div className="flex items-center justify-between w-full mb-4">
               <h5 className="font-manrope font-bold text-2xl leading-9 text-gray-900">
-              {singleProduct.product.productName} </h5>
+              {singleProduct.product?.productName} </h5>
 
             </div>
             <p className="font-normal text-base leading-7 text-gray-500 mb-6">
-              { singleProduct.product.description} 
+              { singleProduct.product?.description} 
             </p>
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-4">
@@ -33,7 +33,7 @@ function Productorder(props) {
                 </button>
                 <input type="text" id="number"
                   className="border border-gray-200 rounded-full w-10 aspect-square outline-none text-gray-900 font-semibold text-sm py-1.5 px-3 bg-gray-100  text-center"
-                  placeholder={ singleProduct.qty}  />
+                  placeholder={ singleProduct?.qty}  />
                 <button
                   className="group rounded-[50px] border border-gray-200 shadow-sm shadow-transparent p-2.5 flex items-center justify-center bg-white transition-all duration-500 hover:shadow-gray-200 hover:bg-gray-50 hover:border-gray-300 focus-within:outline-gray-300">
                   <svg className="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
@@ -45,7 +45,7 @@ function Productorder(props) {
                 </button>
               </div>
               <h6 className="text-yellow-600 font-manrope font-bold text-2xl leading-9 text-right">
-              { singleProduct.product.price} THB </h6>
+              { singleProduct.product?.price} THB </h6>
             </div>
           </div>
         </div> 

@@ -3,13 +3,13 @@ import { create } from "zustand"
 import { persist } from "zustand/middleware"
 
 //api 
-import {actionAddNewOrder, actionGetOrderfromCart, actionGetOrderList, actionSetOrderStatus} from "../api/order"
+import {actionAddNewOrder, actionGetOrderfromCart, actionGetOrderList, actionGetSalesProduct, actionSetOrderStatus} from "../api/order"
 
 //step 1 : create Store
 const orderStored = (set) => ({
   justorder:{},
   orders:[],
-
+  salesProduct:[],
   AddNewOrderWithZustand:  async (value,token)=>{
     try {
 
@@ -64,6 +64,23 @@ setOrderStatusWithZustand: async (value,token,orderId) => {
 
     const res = await actionSetOrderStatus(value,token,orderId)    
     return { success: true  , data : res.data }
+  } catch (error) {
+    return { success: false, error: error.response?.data?.message } //object
+  }
+},
+getSalesProductWithZustand: async (token) => {
+  try {
+
+    //console.log("zustand 1")
+    const res = await actionGetSalesProduct(token)
+    //console.log("zustand",res)
+    const { products } = res.data
+
+    set((state) => ({
+      salesProduct: products, 
+    }));
+    
+    return { success: true  , data : orders }
   } catch (error) {
     return { success: false, error: error.response?.data?.message } //object
   }

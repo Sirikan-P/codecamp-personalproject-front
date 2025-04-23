@@ -16,7 +16,7 @@ function Userbar() {
                 <Link className='hover:border-b-2' to="/user/orderlist">My OrderList</Link>
                 <Link className='hover:border-b-2' to="/user/review">My Review</Link>
                 <Link className='hover:border-b-2' to="/user/listing">My Shop</Link>
-                <Link className='hover:border-b-2' to="/user/sales">Sales Product</Link>
+                <Link className='hover:border-b-2' to="/user/sales">Sales Status</Link>
           </div>
           
     </div>
